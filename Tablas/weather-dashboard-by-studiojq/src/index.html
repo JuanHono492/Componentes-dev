@@ -1,0 +1,121 @@
+<header>
+  <ul class="breadcrumbs">
+    <li><a href="#">Weather App</a></li>
+    <li><a href="#">Global Outlook</a></li>
+    <li><a href="#">Europe</a></li>
+  </ul>
+  
+  <div class="credits">Project/Design by <a href="https://twitter.com/STUDIOJQ">Jonathan Quintin</a> -> <a href="https://dribbble.com/shots/1346874-Weather-Dashboard-Global-Outlook-5?list=users&offset=71">Dribbble</a></div>
+</header>
+
+<div class="content">
+  
+  <div class="caption">
+    <h1>A</h1>
+    <h1>Nice</h1>
+    <h1>Headline</h1>
+    <span class="city">Location</span>
+    <span class="country">Country</span>
+  </div>
+  
+  <nav class="main-nav">
+    <ul>
+      <li class="weather">
+        <div class="menuicon fa fa-bars"></div>
+        <div class="ul-menu">
+          <p>Settings</p>
+            <ul>
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+            </ul>
+            <label for="weatherlocation">Weather for</label>
+            <input type="text" name="weatherlocation" placeholder="location" />
+            <button>Show</button>
+          <div class="ul-menu-close fa fa-times"></div>
+        </div>
+        <div class="icon fa fa-cloud fa-2x"></div>
+        <span>Weather</span>
+      </li>
+      
+      
+      <li class="gallery active">
+        <div class="menuicon fa fa-bars"></div>
+        <div class="ul-menu">
+          <p>Settings</p>
+            <ul>
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+            </ul>
+            <input type = "range" min="0" max="100" onchange="rangevalue.value=value"/>
+            <output id="rangevalue">50</output>
+            <button>Save Changes</button>
+          <div class="ul-menu-close fa fa-times"></div>
+        </div>
+        <div class="icon fa fa-photo fa-2x"></div>
+        <span>Gallery</span>
+      </li>
+      
+      
+      <li class="history">
+        <div class="menuicon fa fa-bars"></div>
+        <div class="ul-menu">
+          <p>Settings</p>
+            <ul>
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+            </ul>
+          <label for="history">Sort by</label>
+            <input list="history" name="history">
+              <datalist id="history">
+                <option value="Name">
+                <option value="Date">
+                <option value="Priority">
+                <option value="Author">
+                <option value="Category">
+              </datalist>
+            <button>Save Changes</button>
+          <div class="ul-menu-close fa fa-times"></div>
+        </div>
+        <div class="icon fa fa-align-left fa-2x"></div>
+        <span>History</span>
+      </li>
+      
+      
+      <li class="likes">
+        <div class="menuicon fa fa-bars"></div>
+        <div class="ul-menu">
+          <p>Settings</p>
+            <ul>
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+            </ul>
+            <button>Show likes</button>
+          <div class="ul-menu-close fa fa-times"></div>
+        </div>
+        <div class="icon fa fa-heart-o fa-2x"></div>
+        <span>Likes</span>
+      </li>
+      
+      
+      <li class="comments">
+        <div class="menuicon fa fa-bars"></div>
+        <div class="ul-menu">
+          <p>Settings</p>
+            <ul>
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+            </ul>
+            <button>Show comments</button>
+          <div class="ul-menu-close fa fa-times"></div>
+        </div>
+        <div class="icon fa fa-comment-o fa-2x"></div>
+        <span>Comments</span>
+      </li>
+    </ul>    
+  </nav>
+</div>

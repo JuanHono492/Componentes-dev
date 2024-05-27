@@ -1,0 +1,26 @@
+.cuadro {
+    width: 1000px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.fondo {
+    background-color: #012623;
+}
+
+.tittle{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.text-tittle{
+    text-color: white;
+    font-size: 30px;
+    text-align: center;
+}
+

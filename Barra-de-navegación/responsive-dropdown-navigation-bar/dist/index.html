@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>BARRA DE NAVEGACION DE JUAN 6</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- 
+Following Tania Ruscia's tutorial on creating your own responsive dropdown navigation bar. https://www.taniarascia.com/responsive-dropdown-navigation-bar/
+-->
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="https://media.licdn.com/dms/image/D560BAQHXwCSgyVV5Nw/company-logo_200_200/0/1704909762127?e=2147483647&v=beta&t=fwuis4ICaFPYli8EB0MeidCGvACYfI3awrAGZXkXOyc">
+        <img src="https://media.licdn.com/dms/image/D560BAQHXwCSgyVV5Nw/company-logo_200_200/0/1704909762127?e=2147483647&v=beta&t=fwuis4ICaFPYli8EB0MeidCGvACYfI3awrAGZXkXOyc" alt="Logo de la empresa" width="65" height="65">
+      </a>
+      
+    </div>
+    <nav>
+      <div class="nav-mobile">
+        <a id="nav-toggle" href="#!"><span></span></a>
+      </div>
+      <ul class="nav-list">
+        <!-- Setting the links to #! will ensure that no action takes place on click. -->
+        <li><a href="#!">Principal</a></li>
+        <li><a href="#!">Nosotros</a></li>
+        <li><a href="#!">Servicios</a>
+          <ul class="nav-dropdown">
+            <li><a href="#!">Diseño web</a></li>
+            <li><a href="#!">Desarrollo web</a></li>
+            <li><a href="#!">Diseño grafico</a></li>
+          </ul>
+        </li>
+        <li><a href="#!">Precios</a></li>
+        <li><a href="#!">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

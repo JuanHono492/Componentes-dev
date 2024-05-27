@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>BARRA DE NAVEGACION DE JUAN 1</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Zeyada&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+
+    <div class="menu">
+        <a href="#">
+            <span class="outter">
+                <span class="inner">PRINCIPAL</span>
+            </span>
+        </a>
+        <a href="#">
+            <span class="outter">
+                <span class="inner">FOTOS</span>
+            </span>
+        </a>
+        <a href="#">
+            <span class="outter">
+                <span class="inner">PORTAFOLIO</span>
+            </span>
+        </a>
+        <a href="#">
+            <span class="outter">
+                <span class="inner">CONTACTO</span>
+            </span>
+        </a>
+    </div>
+
+</header>
+
+<div class="cursor"></div>
+
+<svg>
+    <filter id="filth">
+        <feTurbulence x="0" y="0" baseFrequency="2" numOctaves="100" seed="44">
+            <animate attributeName="baseFrequency" dur="0.5s" values="0.1;0.005;0.05" repeatCount="indefinite">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="20">
+    </filter>
+</svg>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

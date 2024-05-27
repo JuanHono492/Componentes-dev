@@ -1,0 +1,212 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue),90%,90%);
+  --fg: hsl(var(--hue),90%,10%);
+  --primary: hsl(var(--hue),90%,50%);
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.65,0,0.35,1);
+  font-size: calc(14px + (30 - 14) * (100vw - 280px) / (3840 - 280));
+}
+
+body,
+button,
+input {
+  color: var(--fg);
+  font: 1em/1.5 "Montserrat", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(45deg, #b29efa, var(--bg));
+  display: flex;
+  height: 100vh;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+.contact {
+  display: flex;
+  margin: auto;
+  position: relative;
+  width: 20em;
+  transform: translate(0.5em, 0.5em);
+}
+.contact, .contact:after {
+  transition: transform var(--trans-dur) var(--trans-timing);
+}
+.contact:before, .contact:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.contact:before {
+  box-shadow: 0 0 0 0.125em inset;
+  pointer-events: none;
+  z-index: 3;
+}
+.contact:after {
+  background-color: currentColor;
+  z-index: -1;
+}
+.contact__btn, .contact__input {
+  border-radius: 0;
+  height: 4em;
+  outline: transparent;
+  transition: background-color var(--trans-dur) var(--trans-timing), color var(--trans-dur) var(--trans-timing), transform var(--trans-dur) var(--trans-timing);
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.contact__btn {
+  background-color: var(--primary);
+  box-shadow: 0 0 0 0.125em inset;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4em;
+  height: 4em;
+  transform: translateX(500%);
+  z-index: 2;
+}
+.contact__btn:disabled {
+  cursor: not-allowed;
+}
+.contact__feedback {
+  background-color: var(--fg);
+  color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline-end: 4em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: translateX(100%);
+  transition: transform var(--trans-dur) var(--trans-timing);
+  z-index: 1;
+}
+.contact__field, .contact__input {
+  width: 100%;
+}
+.contact__field {
+  overflow: hidden;
+  position: relative;
+}
+.contact__icon {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+.contact__icon, .contact__icon-group {
+  transition: transform calc(var(--trans-dur) / 2) var(--trans-timing);
+}
+.contact__icon-group {
+  transition-duration: var(--trans-dur);
+}
+.contact__icon-spinner {
+  animation: spin 1s linear infinite;
+  transform-origin: 12px 12px;
+}
+.contact__btn:not(:disabled):focus-visible .contact__icon, .contact__btn:not(:disabled):hover .contact__icon {
+  transform: scale(1.1);
+}
+.contact__input {
+  background-color: white;
+  opacity: 1;
+  padding: 1.25em 4em 0.375em 1em;
+}
+.contact__input:disabled {
+  background-color: hsl(var(--hue), 10%, 80%);
+}
+.contact__input:focus-visible ~ .contact__btn {
+  transform: translateX(100%);
+}
+.contact__label, .contact__placeholder {
+  position: absolute;
+  transition: opacity var(--trans-dur) var(--trans-timing), transform var(--trans-dur) var(--trans-timing);
+}
+.contact__label {
+  display: block;
+  font-size: 0.5em;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 0;
+  top: 0.75rem;
+  left: 1rem;
+  text-transform: uppercase;
+  transform: translateY(100%);
+}
+.contact__placeholder {
+  color: hsl(var(--hue), 10%, 40%);
+  pointer-events: none;
+  top: 1.25em;
+  left: 1em;
+}
+.contact[data-state="0"] .contact__input {
+  transition-duration: 0s, var(--trans-dur), var(--trans-dur);
+}
+.contact[data-state="0"] .contact__icon-group {
+  transition-delay: var(--trans-dur);
+}
+.contact[data-state="1"] .contact__icon-group {
+  transform: translateX(64px);
+}
+.contact[data-state="2"] .contact__feedback {
+  transform: translateX(0);
+  transition-delay: var(--trans-dur);
+}
+.contact[data-state="2"] .contact__icon-group {
+  transform: translateX(128px);
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1.65);
+}
+.contact[data-state="1"] .contact__btn, .contact[data-state="2"] .contact__btn, .contact:has(.contact__input[aria-invalid=false]) .contact__btn {
+  transform: translateX(0);
+}
+.contact[data-state="1"] .contact__btn:disabled, .contact[data-state="2"] .contact__btn:disabled {
+  background-color: white;
+}
+.contact[data-state="2"] .contact__label, .contact[data-state="2"] .contact__placeholder {
+  transition-delay: calc(var(--trans-dur) * 2);
+}
+.contact:has(.contact__input:focus-visible), .contact:has(.contact__input:focus-visible):after {
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1.65);
+}
+.contact[data-state="1"], .contact:has(.contact__input:focus-visible), .contact:not([data-state="2"]):has(.contact__input:not(:placeholder-shown)) {
+  transform: translate(0, 0);
+}
+.contact[data-state="1"]:after, .contact:has(.contact__input:focus-visible):after, .contact:not([data-state="2"]):has(.contact__input:not(:placeholder-shown)):after {
+  transform: translate(0.5em, 0.5em);
+}
+.contact[data-state="1"] .contact__label, .contact:has(.contact__input:focus-visible) .contact__label, .contact:not([data-state="2"]):has(.contact__input:not(:placeholder-shown)) .contact__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact[data-state="1"] .contact__placeholder, .contact:has(.contact__input:focus-visible) .contact__placeholder, .contact:not([data-state="2"]):has(.contact__input:not(:placeholder-shown)) .contact__placeholder {
+  opacity: 0;
+  transform: translateY(33%);
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: translate(-64px, 0) rotate(0);
+  }
+  to {
+    transform: translate(-64px, 0) rotate(-1turn);
+  }
+}
